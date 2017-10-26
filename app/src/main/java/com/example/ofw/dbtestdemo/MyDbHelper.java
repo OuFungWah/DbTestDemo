@@ -15,28 +15,29 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public static final String TABLE_USERS = "Users";
     public static final String TABLE_EVENTS = "Events";
 
+    //注意SQLite的大小写
     private String createUserTable = "CREATE TABLE " + TABLE_USERS + "(" +
-            " num char(64) primary not null," +
-            " name char(20) not null," +
-            " password char(20) not null," +
-            " avatar char(20)," +
-            " sex char(20) not null," +
-            " birthday char(20) not null," +
-            " collage char(20) not null," +
-            " subject char(20) not null," +
-            " grade int," +
-            " class int," +
+            " num CHAR(64) PRIMARY KEY NOT NULL," +
+            " name CHAR(20) NOT NULL," +
+            " password CHAR(20) NOT NULL," +
+            " avatar CHAR(20)," +
+            " sex CHAR(20) NOT NULL," +
+            " birthday CHAR(20) NOT NULL," +
+            " collage CHAR(20) NOT NULL," +
+            " subject CHAR(20) NOT NULL," +
+            " grade INT," +
+            " class INT" +
             ")";
 
     private String createEventTable = "CREATE TABLE " + TABLE_EVENTS + "(" +
-            " num char(64) primary not null," +
-            " name char(64) not null," +
-            " type char(20) not null," +
-            " location char(20) not null," +
-            " date char(20) not null," +
-            " start char(20)," +
-            " end char(20)," +
-            " content char(400))";
+            " num CHAR(64) PRIMARY KEY NOT NULL," +
+            " name CHAR(64) NOT NULL," +
+            " type CHAR(20) NOT NULL," +
+            " location char(20) NOT NULL," +
+            " date CHAR(20) NOT NULL," +
+            " start CHAR(20)," +
+            " end CHAR(20)," +
+            " content CHAR(400))";
 
     public MyDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
