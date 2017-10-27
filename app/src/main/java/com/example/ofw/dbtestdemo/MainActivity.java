@@ -22,23 +22,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dao = new MyDao(this);
-        testEvent();
-
+//        testEvent();
+        testUser();
     }
 
     protected void testUser() {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("num", "0000000002");
-        contentValues.put("name", "区枫华");
-        contentValues.put("password", "chicken520");
-        contentValues.put("avatar", "http://www.baidu.com");
-        contentValues.put("sex", "男");
-        contentValues.put("birthday", "19970119");
-        contentValues.put("collage", "计算机学院");
-        contentValues.put("subject", "软件工程");
-        contentValues.put("grade", 2015);
-        contentValues.put("class", 3);
-        dao.insertUser(contentValues);
+//        contentValues.put("num", "0000000003");
+//        contentValues.put("name", "区枫华");
+//        contentValues.put("password", "chicken530");
+//        contentValues.put("avatar", "http://www.baidu.com");
+//        contentValues.put("sex", "女");
+//        contentValues.put("birthday", "19970119");
+//        contentValues.put("collage", "计算机学院");
+//        contentValues.put("subject", "软件工程");
+//        contentValues.put("grade", 2015);
+//        contentValues.put("class", 3);
+//        dao.insertUser(contentValues);
+
+//        String args[] = {"区枫华"};
+//        dao.updateUsers(contentValues, "name = ?", args);
+
+//        // 或
+//        String args[] = {"区枫华","chicken510"};
+//        dao.updateUsers(contentValues, "name = ? OR password = ?", args);
+
+//        // 和
+//        String args[] = {"区枫华","chicken510"};
+//        dao.updateUsers(contentValues, "name = ? AND password = ?", args);
+
+        String args[] = {"0000000003"};
+        Log.d(TAG, "testUser: delete = "+dao.deleteUsers("num = ?",args));
 
         list = dao.selectAllUser();
         for (int i = 0; i < list.size(); i++) {
